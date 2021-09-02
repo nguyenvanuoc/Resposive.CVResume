@@ -1,0 +1,404 @@
+/*fonts*/
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFProDisplay-Bold.eot');
+    src: url('../fonts/SFProDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Bold.woff') format('woff'),
+        url('../fonts/SFProDisplay-Bold.ttf') format('truetype'),
+        url('../fonts/SFProDisplay-Bold.svg#SFProDisplay-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFProDisplay-Regular.eot');
+    src: url('../fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+        url('../fonts/SFProDisplay-Regular.ttf') format('truetype'),
+        url('../fonts/SFProDisplay-Regular.svg#SFProDisplay-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*var */
+
+$color1:#938DF8;
+$color2:#FFCF41;
+$color3:#77C9FB;
+$color4:#FE73A5;
+$color5:#FFBB87;
+$color6:#64DDBA;
+$text:#000;
+$main:#FF8E5E;
+$textD:#828282;
+$link:#2F80ED;
+
+$font-size-normal:14px;
+$font-size-lg:18px;
+$font-size-big:36px;
+$font-size-xl:24px;
+
+
+
+/*Reset*/
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html,body{
+    font-family: 'SF Pro Display',"Tahoma";
+    font-size: $font-size-normal;
+    line-height: 1.432;
+    background-image: url(../img/bg-footer.svg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 8rem 3rem;
+    width: 100%;
+
+    
+}
+/*toggle-check*/
+.toggle-check{
+    position: relative;
+    min-height: 16px;
+    .check{
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        left: 0px;
+        height: 100%;
+        z-index: 2;
+        cursor: pointer;
+        opacity: 0;
+    }
+    .name{
+        width: 28px;
+        height: 10px;
+        border-radius: 20px;
+        background: #f6f6f6;
+        display: inline-block;
+        box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);
+        position: relative;
+       
+        &:before{
+            width: 16px;
+            content: "";
+            height: 16px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
+        }
+        &:after{
+            content: attr(data-disabled);
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 35px;
+            line-height: 10px;
+        }
+    }
+    .check:checked + .name{
+        background: #FCDED1;
+        &:before{
+            left: auto;
+            right: 0px;
+        }
+        &:after{
+            content: attr(data-active);
+        }
+    }
+}
+
+/*header*/
+
+.header-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    .logo{
+        max-width: 80px;
+        img{
+            width: 100%;
+        }
+    }
+    .menus-box{
+        display: block;
+        
+    }
+    .menus{
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        >li{
+            display: inline-block;
+            >a{
+                color: $text;
+                font-size: $font-size-lg;
+                display: block;
+                padding: 7px 20px;
+                text-decoration: none;
+                font-weight:bold;
+                
+            }
+            &.active >a, &:hover > a,a:hover{
+                color: $main;
+            }
+        }
+    }
+   
+
+}
+
+.box-row{
+    display: flex;
+    .box-col-left{
+        flex: 1;
+        padding-right: 2rem;
+        margin-right: 2rem;
+    }
+    .box-col-right{
+        width: 190px;
+    }
+}
+
+/*Banner*/
+
+.hero-banner{
+    margin-bottom: 6rem;
+    .slogan-title{
+        font-size: $font-size-big;
+        margin-bottom: 1rem;
+    }
+    .hero-des{
+        margin-top: 2rem;
+    }
+     .box-address{
+        .info{
+            p{
+                display: block;
+                margin-bottom: 1rem;
+
+            }
+        }
+        .social{
+            a{
+                display: inline-block;
+                text-decoration: none;
+                margin-right: 10px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                &:hover{
+                    transition: all 0.3s ease;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+
+
+/*main-content*/
+.main-title{
+    font-size: $font-size-xl;
+    margin-bottom: 2rem;
+}
+
+.job-datetime{
+    color: $textD;
+    margin-bottom: 0.5rem;
+}
+.job-title{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.job-local{
+    margin-bottom: 0.5rem;
+}
+.job-desc{
+    margin-bottom: 0.5rem;
+}
+.link{
+    color: $link;
+    display: block;
+    &:hover{
+        color: #000;
+        text-decoration: none;
+    }
+}
+.skill{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: relative;
+    
+    &:before{
+        width: 16px;
+        height: 16px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 4px;
+        left: -8px;
+        content: "";
+        bottom: 0px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    &.no1{
+        background: $color1;
+    }
+    &.no2{
+        background: $color2;
+    }
+    &.no3{
+        background: $color3;
+    }
+    &.no4{
+        background: $color4;
+    }
+    &.no5{
+        background: $color5;
+    }
+    &.no6{
+        background: $color6;
+    }
+    &.big{
+        width: 28px;
+        height: 28px;
+        border: 2px solid rgba(#fff,0.1);
+        border-radius: 4px;
+        &:before{
+            width: 40px;
+            height: 48px;
+            top: 5px;
+            left: -24px;
+        }
+    }
+}
+.box-work-exp{
+    .item{
+        margin-bottom: 3rem;
+    }
+    .job-title{
+        margin-bottom: 0.8rem;
+        .box-skills{
+            display: inline-block;
+            margin-left: 10px;
+            .skill{
+                margin-left: -5px;
+            }
+        }
+    }
+    .company-info{
+        margin-bottom: 0.8rem;
+        .avatar{
+            display: inline-block;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            img{
+                width: 32px;
+                height: 32px;
+                object-fit: cover;
+
+            }
+        }
+        .name{
+            display: inline-block;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        .job-local{
+            display: inline-block;
+            margin-bottom: 0px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.box-edu{
+    text-align: center;
+    .box-skills{
+        margin-bottom: 1rem;
+        &.-top{
+            .skill{
+                border: 2px solid rgba(#fff,0.1);
+                vertical-align: middle;
+                &:nth-child(2){
+                    position: relative;
+                    z-index: 2;
+                    margin: 0px -5px;
+                }
+            }
+            
+        }
+    }
+    .item{
+        margin-bottom: 3rem;
+    }    
+}
+
+
+/*Bottom*/
+.box-skill-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6rem;
+    .item{
+        width: calc(25% - 1rem);
+    }
+    .title{
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/*Responsive*/
+
+//Screen < 768px
+
+@media(max-width:768px){
+    .container{
+        padding: 2rem;
+    }
+    .box-row{
+        display: block;
+        .box-col-left{
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            margin-bottom: 2rem;
+        }
+        .box-col-right{
+            width: 100%;
+        }
+    }
+    .box-skill-bottom{
+        display: block;
+        .item{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}
